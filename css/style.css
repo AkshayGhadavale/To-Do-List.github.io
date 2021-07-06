@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: chocolate;
+}
+
+.main-section {
+    background-color: cadetblue;
+    width: 60%;
+    height: 80%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-section {
+    width: 100%;
+    height: 30%;
+    background-color: rgb(19, 133, 133);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list.section {
+    width: 100%;
+    height: 70%;
+}
+
+[type="date"] {
+    background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+#dateselect {
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3px 5px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+    width: 190px;
+    font-family: Comic Sans MS;
+}
+
+textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.times {
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3px 5px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+    width: 60px;
+    font-family: Comic Sans MS;
+}
+
+.add-btn {
+    width: 4em;
+    height: 3em;
+    border: solid 3px white;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.time-container {}

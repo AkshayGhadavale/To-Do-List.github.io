@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>TO DO List</h1>
+        </div>
+        <div class="main-section">
+            <div class="add-section">
+                <textarea name="" id="tododecp" cols="30" rows="5"></textarea>
+                <input id="dateselect" type="date">
+                <div class="time-container">
+                    <input id="hours" onchange="ampmset()" class="times" type="number" min="0" max="12">
+                    <input id="minutes" class="times" type="number" min="0" max="60">
+                    <!-- <input id="seconds" class="times" type="number" min="0" max="60"> -->
+                    <select name="mode" id="mode" class="times">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                       
+                      </select>
+                </div>
+                <button class="add-btn" onclick="addlist();">ADD</button>
+
+            </div>
+            <div class="list-section">
+                <div id="lap"></div>
+
+                </ol>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+<script src="/js/script.js"></script>
+
+</html>
