@@ -39,41 +39,6 @@ timeget();
 
 
 
-//--------------------for create cancel button in list-----------------------------------
-
-let btnlist = document.getElementsByTagName("LI");
-
-for (var i = 0; i < btnlist.length; i++) {
-    let button = document.createElement("Button");
-
-
-    button.style.backgroundColor = "red";
-
-    button.style.width = "50px";
-    button.style.height = "30px";
-    button.style.borderRadius = "10px";
-    button.style.justifySelf = "flex-end";
-    // button.id = "cancelbtn" + "";
-    button.className = "close";
-    btnlist[i].appendChild(button);
-
-
-}
-
-// -----------------Click on a close button to hide the current list item-----------------------------------
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
-}
-
-
-
-
-
 
 
 
@@ -81,90 +46,106 @@ for (i = 0; i < close.length; i++) {
 
 function addlist() {
 
+
+
     let minvalue = document.getElementById("minutes").value;
     let hrsvalue = document.getElementById("hours").value;
     let modevalue = document.getElementById("mode").value;
-    let n;
-
-    let timelap = hrsvalue + ":" + minvalue + ":" + modevalue;
-    // document.getElementById("times").innerText = start + "/" + min + "/" + hours;
-    let lap = [];
-
-    lap.push(timelap);
-
-    ul = document.createElement("ul");
-
-    document.getElementById("lap").appendChild(ul);
+    let name = document.getElementById("tododecp").value
+    if (name == "") {
+        alert("eneter despctiton ");
+    } else {
 
 
+        let timelap = hrsvalue + ":" + minvalue + ":" + modevalue;
+        // document.getElementById("times").innerText = start + "/" + min + "/" + hours;
+        let lap = [];
 
+        lap.push(timelap + '&nbsp &nbsp &nbsp &nbsp &nbsp' + name);
 
+        ul = document.createElement("ul");
 
-
+        document.getElementById("lap").appendChild(ul);
 
 
 
 
 
 
-    for (i = 0; i < lap.length; i++) {
-        let li = document.createElement("li");
-        // btn = document.createElement('button');
-        ul.appendChild(li);
-        ul.style.display = "flex";
-
-        // ul.style.flexdirection="column-reverse";
-        //  ul.style.flexgrow="1";
-        // flex-direction: column-reverse;
-        // 
-
-        //.......................list style creation
-
-        li.style.listStyle = "none";
-        li.style.width = "400px";
-        li.style.height = "40px";
-        li.style.display = "flex";
-        li.style.backgroundColor = "grey";
-        li.style.borderRadius = "10px";
-        li.style.justifyContent = " space-between";
-        li.style.alignItems = "center";
-        li.style.marginTop = "10px";
 
 
 
 
-        //-------buttton creation
-        let button = document.createElement("Button");
 
 
-        button.style.backgroundColor = "red";
+        for (i = 0; i < lap.length; i++) {
+            let li = document.createElement("li");
+            // btn = document.createElement('button');
+            ul.appendChild(li);
+            ul.style.display = "flex";
 
-        button.style.width = "50px";
-        button.style.height = "30px";
-        button.style.borderRadius = "10px";
-        button.style.justifySelf = "flex-end";
-        button.className = "close";
+            // ul.style.flexdirection="column-reverse";
+            //  ul.style.flexgrow="1";
+            // flex-direction: column-reverse;
+            // 
+
+            //.......................list style creation
+
+            li.style.listStyle = "none";
+            li.style.width = "400px";
+            li.style.height = "40px";
+            li.style.display = "flex";
+
+            li.style.backgroundColor = "grey";
+            li.style.borderRadius = "10px";
+            li.style.justifyContent = " space-between";
+            li.style.alignItems = "center";
+            li.style.marginTop = "10px";
 
 
-        //button and list item  add in list
-        li.innerHTML += lap[i]
-        li.appendChild(button);
 
-        //--------to close curent list item 
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function() {
-                var div = this.parentElement;
-                div.style.display = "none";
+
+            //-------buttton creation
+            let button = document.createElement("DIV");
+
+
+
+            button.style.backgroundImage = "url(./images/c23.png)";
+            button.style.backgroundSize = "cover";
+            button.style.backgroundPosition = "center";
+            button.style.backgroundRepeat = "no-repeat"
+
+            button.style.width = "40px";
+            button.style.height = "40px";
+
+            button.style.justifySelf = "flex-end";
+            button.className = "close";
+
+
+            //button and list item  add in list
+            li.innerHTML += lap[i]
+            li.appendChild(button);
+
+            var close = document.getElementsByClassName("close");
+
+
+
+            //--------to close curent list item 
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+
+                }
+
+
+
+
+
+
+
             }
 
-
-
-
-
-
-
         }
-
-
     }
 }
